@@ -19,7 +19,7 @@ library-app : 강의의 과제를 작성 중인 spring-boot project
 
 다섯 번째 과제 [클린코드 리펙토링하기](https://velog.io/@heisje/5번째-과제-인프런-워밍업-클럽-스터디-BE-1주차)
 
-여섯 번째 과제 [스프링컨테이너 목적에 따라 분리하기]()
+여섯 번째 과제 [스프링컨테이너 목적에 따라 분리하기](https://github.com/heisje/Inflearn-warmup-club-study-0/blob/main/assignment/LayeredArchitecture.md)
 
 일곱 번째 과제 [JPA를 적용한 과일가게 API 작성하기]()
 
