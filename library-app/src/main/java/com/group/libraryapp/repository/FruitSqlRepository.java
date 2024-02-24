@@ -19,6 +19,7 @@ public class FruitSqlRepository implements FruitRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
     public boolean isExistFruit(long id){
         String readSql = "SELECT * FROM fruit WHERE id = ?";
         return jdbcTemplate.query(readSql, (rs, rowNum) -> 0, id).isEmpty();
