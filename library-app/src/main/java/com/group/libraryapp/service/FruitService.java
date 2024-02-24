@@ -17,7 +17,6 @@ public class FruitService {
         this.fruitRepository = fruitRepository;
     }
 
-
     public void saveFruit(FruitRequest request){
         fruitRepository.saveFruit(request.getName(), request.warehousingDate(), request.getPrice());
     }
@@ -37,7 +36,5 @@ public class FruitService {
         response.put("notSalesAmount", notSalesAmount);
 
         return response;
-
-
     }
 }
