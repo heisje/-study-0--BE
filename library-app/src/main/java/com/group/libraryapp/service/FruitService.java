@@ -3,7 +3,6 @@ package com.group.libraryapp.service;
 import com.group.libraryapp.dto.FruitRequest;
 import com.group.libraryapp.repository.FruitRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;

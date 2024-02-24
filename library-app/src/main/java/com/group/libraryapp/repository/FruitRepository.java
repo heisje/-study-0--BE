@@ -1,7 +1,5 @@
 package com.group.libraryapp.repository;
 
-import org.springframework.jdbc.core.JdbcTemplate;
-
 import java.time.LocalDate;
 
 public interface FruitRepository {
