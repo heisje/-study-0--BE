@@ -3,7 +3,6 @@ package com.group.libraryapp.controller;
 import com.group.libraryapp.dto.FruitRequest;
 import com.group.libraryapp.service.FruitService;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -15,9 +14,9 @@ public class FruitController {
     JdbcTemplate jdbcTemplate;
     FruitService fruitService;
 
-    public FruitController(JdbcTemplate jdbcTemplate) {
+    public FruitController(JdbcTemplate jdbcTemplate, FruitService fruitService) {
         this.jdbcTemplate = jdbcTemplate;
-        this.fruitService = new FruitService(jdbcTemplate);
+        this.fruitService = fruitService;
     }
 
     @PostMapping("/fruit")

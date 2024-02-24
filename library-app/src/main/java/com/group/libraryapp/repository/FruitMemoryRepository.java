@@ -1,16 +1,19 @@
 package com.group.libraryapp.repository;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
+@Qualifier("memory")
 @Repository
-public class FruitRepositroy {
+public class FruitMemoryRepository implements FruitRepository {
 
     JdbcTemplate jdbcTemplate;
 
-    public FruitRepositroy(JdbcTemplate jdbcTemplate) {
+    public FruitMemoryRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -31,11 +34,13 @@ public class FruitRepositroy {
 
     public long calculateSalesAmount(String name) {
         String sql = "SELECT SUM(price) FROM fruit WHERE name = ? AND is_sale = true";
-        return jdbcTemplate.queryForObject(sql, new Object[]{name}, Long.class);
+        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, Long.class, name))
+                .orElse(0L);
     }
 
     public long calculateNotSalesAmount(String name) {
         String sql = "SELECT SUM(price) FROM fruit WHERE name = ? AND is_sale = false";
-        return jdbcTemplate.queryForObject(sql, new Object[]{name}, Long.class);
+        return Optional.ofNullable(jdbcTemplate.queryForObject(sql, Long.class, name))
+                .orElse(0L);
     }
 }

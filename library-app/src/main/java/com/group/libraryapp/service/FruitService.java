@@ -1,7 +1,8 @@
 package com.group.libraryapp.service;
 
 import com.group.libraryapp.dto.FruitRequest;
-import com.group.libraryapp.repository.FruitRepositroy;
+import com.group.libraryapp.repository.FruitRepository;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -11,29 +12,33 @@ import java.util.Map;
 @Service
 public class FruitService {
 
-    private final FruitRepositroy fruitRepositroy;
+    private final FruitRepository fruitRepository;
 
-    public FruitService(JdbcTemplate jdbcTemplate) {
-        fruitRepositroy = new FruitRepositroy(jdbcTemplate);
+    public FruitService(@Qualifier("sql") FruitRepository fruitRepository) {
+        this.fruitRepository = fruitRepository;
     }
 
+
     public void saveFruit(FruitRequest request){
-        fruitRepositroy.saveFruit(request.getName(), request.warehousingDate(), request.getPrice());
+        fruitRepository.saveFruit(request.getName(), request.warehousingDate(), request.getPrice());
     }
 
     public void sellFruit(long id){
-        if (fruitRepositroy.isExistFruit(id)){
+        if (fruitRepository.isExistFruit(id)){
             throw new IllegalArgumentException();
         }
-        fruitRepositroy.sellFruit(id);
+        fruitRepository.sellFruit(id);
     }
 
     public Map<String, Long> findFruit(String name){
-        long salesAmount = fruitRepositroy.calculateSalesAmount(name);
-        long notSalesAmount = fruitRepositroy.calculateNotSalesAmount(name);
+        long salesAmount = fruitRepository.calculateSalesAmount(name);
+        long notSalesAmount = fruitRepository.calculateNotSalesAmount(name);
         Map<String, Long> response = new HashMap<>();
         response.put("salesAmount", salesAmount);
         response.put("notSalesAmount", notSalesAmount);
+
         return response;
+
+
     }
 }
