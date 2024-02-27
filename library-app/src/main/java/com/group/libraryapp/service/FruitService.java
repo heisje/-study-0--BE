@@ -11,7 +11,6 @@ import java.util.Map;
 
 public interface FruitService {
 
-
     void saveFruit(FruitRequest request);
 
     List<FruitResponse> getFruits();
