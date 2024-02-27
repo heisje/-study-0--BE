@@ -17,7 +17,7 @@ public class FruitRequest {
         return name;
     }
 
-    public LocalDate warehousingDate() {
+    public LocalDate getWarehousingDate() {
         return warehousingDate;
     }
 

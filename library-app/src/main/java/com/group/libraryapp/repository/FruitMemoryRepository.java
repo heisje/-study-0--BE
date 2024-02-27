@@ -1,10 +1,12 @@
 package com.group.libraryapp.repository;
 
+import com.group.libraryapp.dto.FruitResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 @Qualifier("memory")
@@ -23,8 +25,14 @@ public class FruitMemoryRepository implements FruitRepository {
     }
 
     public void saveFruit(String name, LocalDate warehousingDate, long price){
-        String sql = "INSERT INTO fruit (name, warehousingDate, price) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO fruit (name, warehousing_date, price) VALUES (?, ?, ?)";
         jdbcTemplate.update(sql, name, warehousingDate, price);
+    }
+
+    public List<FruitResponse> getFruits(){
+        String sql = "SELECT * FROM fruit";
+        jdbcTemplate.update(sql);
+        return null;
     }
 
     public void sellFruit(long id){

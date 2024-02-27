@@ -1,10 +1,13 @@
 package com.group.libraryapp.controller;
 
 import com.group.libraryapp.dto.FruitRequest;
+import com.group.libraryapp.dto.FruitResponse;
+import com.group.libraryapp.service.FruitJdbcService;
 import com.group.libraryapp.service.FruitService;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -29,9 +32,14 @@ public class FruitController {
         fruitService.sellFruit(id);
     }
 
-    @GetMapping("/fruit")
-    public Map<String, Long> getFruit(@RequestParam String name){
+    @GetMapping("/fruit/sum")
+    public Map<String, Long> findFruit(@RequestParam String name){
         return fruitService.findFruit(name);
+    }
+
+    @GetMapping("/fruit")
+    public List<FruitResponse> getFruit(){
+        return fruitService.getFruits();
     }
 
 }
