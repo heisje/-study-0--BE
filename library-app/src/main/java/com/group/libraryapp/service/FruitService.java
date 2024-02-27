@@ -19,4 +19,8 @@ public interface FruitService {
     void sellFruit(long id);
 
     Map<String, Long> findFruit(String name);
+
+    Map<String, Long> countFruit(String name);
+
+    List<FruitResponse> isSaleByPriceFruit(String option, long price);
 }

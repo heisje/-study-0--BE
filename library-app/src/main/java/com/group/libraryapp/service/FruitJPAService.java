@@ -46,4 +46,27 @@ public class FruitJPAService implements FruitService {
 
         return response;
     }
+
+    public Map<String, Long> countFruit(String name){
+        Map<String, Long> response = new HashMap<>();
+        response.put("count", fruitJPARepository.countByName(name));
+        return response;
+    }
+
+    @Override
+    public List<FruitResponse> isSaleByPriceFruit(String option, long price) {
+        List<Fruit> fruits;
+
+        if(option.equals("GTE")){
+            fruits = fruitJPARepository.findByPriceGTEAndIsSaleIsTrue(price);
+        } else if (option.equals("LTE")) {
+            fruits = fruitJPARepository.findByPriceLTEAndIsSaleIsTrue(price);
+        } else {
+            throw new IllegalArgumentException("잘못된 옵션이 사용되었습니다.");
+        }
+
+        return fruits.stream().map(FruitResponse::new).collect(Collectors.toList());
+    }
+
+
 }

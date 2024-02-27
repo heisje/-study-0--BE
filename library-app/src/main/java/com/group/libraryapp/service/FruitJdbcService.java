@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class FruitJdbcService implements FruitService{
@@ -43,5 +44,15 @@ public class FruitJdbcService implements FruitService{
         response.put("notSalesAmount", notSalesAmount);
 
         return response;
+    }
+
+    @Override
+    public Map<String, Long> countFruit(String name) {
+        return null;
+    }
+
+    @Override
+    public List<FruitResponse> isSaleByPriceFruit(String option, long price) {
+        return null;
     }
 }

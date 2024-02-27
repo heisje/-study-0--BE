@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v2")
+@RequestMapping("/api/v2/fruit")
 public class FruitController {
 
     JdbcTemplate jdbcTemplate;
@@ -22,24 +22,33 @@ public class FruitController {
         this.fruitService = fruitService;
     }
 
-    @PostMapping("/fruit")
+    @PostMapping("")
     public void saveFruit(@RequestBody FruitRequest request){
         fruitService.saveFruit(request);
     }
 
-    @PutMapping("/fruit")
+    @PutMapping("")
     public void sellFruit(@RequestParam long id){
         fruitService.sellFruit(id);
     }
 
-    @GetMapping("/fruit/sum")
-    public Map<String, Long> findFruit(@RequestParam String name){
-        return fruitService.findFruit(name);
-    }
-
-    @GetMapping("/fruit")
+    @GetMapping("")
     public List<FruitResponse> getFruit(){
         return fruitService.getFruits();
     }
 
+    @GetMapping("/sum")
+    public Map<String, Long> findFruit(@RequestParam String name){
+        return fruitService.findFruit(name);
+    }
+
+    @GetMapping("/count")
+    public Map<String, Long> countFruit(@RequestParam String name){
+        return fruitService.countFruit(name);
+    }
+
+    @GetMapping("/list")
+    public List<FruitResponse> isSaleByPriceFruit(@RequestParam String option, long price){
+        return fruitService.isSaleByPriceFruit(option, price);
+    }
 }
