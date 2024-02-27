@@ -37,9 +37,25 @@ public interface FruitJPARepository extends JpaRepository<Fruit, Long> {
 ```
 
 ### FruitJPAService
+- 아래가 3번 문제인데, 선언적으로 작성하고 싶었는데, 직관적인 예시를 못찾아서 아직 변경 못했다..
+```java
+// 3번 문제
+@Override
+public List<FruitResponse> isSaleByPriceFruit(String option, long price) {
+    List<Fruit> fruits;
 
-- Optional로 묶어서 처리해주는 방식이 좀 더 선언적인 것 같지만, Optional로 묶고 안에서 If문을 쓰는 방식을 하는 거면 차라리 명령형이 직관적인 것 같아서 3번 문제의 서비스를 다음과 같이 처리했다.
+    if(option.equals("GTE")){
+        fruits = fruitJPARepository.findByPriceGTEAndIsSaleIsTrue(price);
+    } else if (option.equals("LTE")) {
+        fruits = fruitJPARepository.findByPriceLTEAndIsSaleIsTrue(price);
+    } else {
+        throw new IllegalArgumentException("잘못된 옵션이 사용되었습니다.");
+    }
 
+    return fruits.stream().map(FruitResponse::new).collect(Collectors.toList());
+}
+```
+FruitJPAService 전체 코드
 ```java
 @Service
 @Primary
