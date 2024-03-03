@@ -21,6 +21,6 @@ library-app : 강의의 과제를 작성 중인 spring-boot project
 
 여섯 번째 과제 [스프링컨테이너 목적에 따라 분리하기](https://github.com/heisje/Inflearn-warmup-club-study-0/blob/main/assignment/LayeredArchitecture.md)
 
-일곱 번째 과제 [JPA를 적용한 과일가게 API 작성하기]()
+일곱 번째 과제 [JPA를 적용한 과일가게 API 작성하기](https://github.com/heisje/Inflearn-warmup-club-study-0/blob/main/assignment/jpaFruitAPIs.md)
 
 여덟 번쨰 과제 [미니프로젝트 사내 출퇴근 시스템]()
