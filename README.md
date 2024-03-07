@@ -23,4 +23,12 @@ library-app : 강의의 과제를 작성 중인 spring-boot project
 
 일곱 번째 과제 [JPA를 적용한 과일가게 API 작성하기](https://github.com/heisje/Inflearn-warmup-club-study-0/blob/main/assignment/jpaFruitAPIs.md)
 
-여덟 번쨰 과제 [미니프로젝트 사내 출퇴근 시스템]()
+미니프로젝트 과제 [미니프로젝트 사내 출퇴근 시스템](https://github.com/heisje/team-attendance)
+
+## 발자국
+첫 번째 발자국
+[https://www.inflearn.com/blogs/6826](https://www.inflearn.com/blogs/6826)
+
+두 번째 발자국
+[https://www.inflearn.com/blogs/7024](https://www.inflearn.com/blogs/7024)
+
