@@ -27,8 +27,8 @@ library-app : 강의의 과제를 작성 중인 spring-boot project
 
 ## 발자국
 첫 번째 발자국
-[https://www.inflearn.com/blogs/6826](https://www.inflearn.com/blogs/6826)
+[https://inf.run/tFov1](https://inf.run/tFov1)
 
 두 번째 발자국
-[https://www.inflearn.com/blogs/7024](https://www.inflearn.com/blogs/7024)
+[https://inf.run/tFov1](https://inf.run/4Aw7u)
 
