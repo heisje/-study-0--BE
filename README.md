@@ -26,11 +26,13 @@ library-app : 강의의 과제를 작성 중인 spring-boot project
 미니프로젝트 과제 [미니프로젝트 사내 출퇴근 시스템](https://github.com/heisje/team-attendance)
 
 ## 발자국
+인프런 블로그 링크 에러가 있으니 안들어가질 수도 있다.
+
 첫 번째 발자국
 [https://inf.run/tFov1](https://inf.run/tFov1)
 
 두 번째 발자국
-[https://inf.run/tFov1](https://inf.run/4Aw7u)
+[https://inf.run/4Aw7u](https://inf.run/4Aw7u)
 
 세 번째 발자국
 [https://inf.run/7sbCw](https://inf.run/7sbCw)
